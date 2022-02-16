@@ -1,0 +1,12 @@
+server:
+  port: 8040
+spring: 
+  application:
+    name: gateway-service 
+  cloud:
+    gateway:
+      routes:
+      - id: MOVIE-THEATRE-ADMIN
+        uri: lb://MOVIE-THEATRE-ADMIN
+        predicates:
+        - Path=/theatre-admin/**
